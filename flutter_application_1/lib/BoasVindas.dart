@@ -15,7 +15,68 @@ class BoasVindas extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(),
-        drawer: Drawer(child: Text('')),
+        drawer: Drawer(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.only(left: 16, top: 16),
+                child: TextButton(
+                  onPressed: () {
+                    print('botão "Suporte por e-mail" clicado');
+                    // Adicione aqui o código para lidar com o clique do botão "Suporte por e-mail"
+                  },
+                  child: Text(
+                    'Suporte mensagem',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff050505),
+                    ),
+                  ),
+                  style: TextButton.styleFrom(
+                    backgroundColor: Color(0xffedeeef),
+                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 16), // Espaçamento entre os botões
+              Container(
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.only(left: 16),
+                child: TextButton(
+                  onPressed: () {
+                    print('botão "Entrar em contato" clicado');
+                    // Adicione aqui o código para lidar com o clique do botão "Entrar em contato"
+                  },
+                  child: Text(
+                    'Entrar em contato por e-mail',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff050505),
+                    ),
+                  ),
+                  style: TextButton.styleFrom(
+                    backgroundColor: Color(0xffedeeef),
+                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                  height:
+                      16), // Adicione um espaço entre os botões e outros itens do Drawer
+              // Aqui você pode adicionar outros itens do Drawer, se necessário
+            ],
+          ),
+        ),
         backgroundColor: Colors.white,
         body: Stack(
           children: <Widget>[
@@ -126,7 +187,7 @@ class BoasVindas extends StatelessWidget {
                   print('Botão de email pressionado');
                 },
                 child: Text(
-                  'entre com email',
+                  'Entre com Google',
                   style: TextStyle(
                     fontSize: MediaQuery.of(context).size.width * 0.05,
                     fontWeight: FontWeight.bold,
@@ -136,7 +197,7 @@ class BoasVindas extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xffff0b02),
                   padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width * 0.285,
+                    horizontal: MediaQuery.of(context).size.width * 0.268,
                     vertical: MediaQuery.of(context).size.height * 0.030,
                   ),
                   shape: RoundedRectangleBorder(
