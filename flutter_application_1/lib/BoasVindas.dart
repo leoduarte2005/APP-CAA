@@ -19,9 +19,12 @@ class BoasVindas extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              SizedBox(
+                  height: MediaQuery.of(context).size.height *
+                      0.1), // Espaçamento para mover os botões para baixo
               Container(
                 alignment: Alignment.centerLeft,
-                padding: EdgeInsets.only(left: 16, top: 16),
+                padding: EdgeInsets.only(left: 10),
                 child: TextButton(
                   onPressed: () {
                     print('botão "Suporte por e-mail" clicado');
@@ -44,10 +47,10 @@ class BoasVindas extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 16), // Espaçamento entre os botões
+              // Espaçamento entre os botões
               Container(
                 alignment: Alignment.centerLeft,
-                padding: EdgeInsets.only(left: 16),
+                padding: EdgeInsets.only(left: 10),
                 child: TextButton(
                   onPressed: () {
                     print('botão "Entrar em contato" clicado');
@@ -71,8 +74,8 @@ class BoasVindas extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                  height:
-                      16), // Adicione um espaço entre os botões e outros itens do Drawer
+                  height: MediaQuery.of(context).size.height *
+                      0.2), // Espaçamento para mover os botões para baixo
               // Aqui você pode adicionar outros itens do Drawer, se necessário
             ],
           ),
@@ -83,7 +86,7 @@ class BoasVindas extends StatelessWidget {
             Container(
               width: MediaQuery.of(context).size.width,
               height: 500,
-              color: Color(0xff70e2fe),
+              color: Color(0xff6ecbe1),
             ),
             Positioned(
               left: 0,
@@ -170,7 +173,7 @@ class BoasVindas extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xff00a41b),
                   padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width * 0.346,
+                    horizontal: MediaQuery.of(context).size.width * 0.345,
                     vertical: MediaQuery.of(context).size.height * 0.030,
                   ),
                   shape: RoundedRectangleBorder(
@@ -197,7 +200,7 @@ class BoasVindas extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xffff0b02),
                   padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width * 0.268,
+                    horizontal: MediaQuery.of(context).size.width * 0.265,
                     vertical: MediaQuery.of(context).size.height * 0.030,
                   ),
                   shape: RoundedRectangleBorder(
