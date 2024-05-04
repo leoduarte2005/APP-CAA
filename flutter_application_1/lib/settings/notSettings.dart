@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/settings/classSettings.dart';
 
 class NotificationSettings extends StatefulWidget {
   @override
@@ -12,20 +13,22 @@ class _NotificationSettingsState extends State<NotificationSettings> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig.init(context);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Configurações de Notificações'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(SizeConfig.getPercentageWidth(4)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              width: double.infinity,
+              height: SizeConfig.getPercentageHeight(10),
               decoration: BoxDecoration(
                 color: Colors.grey[200],
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(SizeConfig.getPercentageWidth(4)),
                 border: Border.all(
                   color: Colors.grey,
                   width: 1,
@@ -40,14 +43,16 @@ class _NotificationSettingsState extends State<NotificationSettings> {
                 ],
               ),
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(SizeConfig.getPercentageWidth(2)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       'Modo Silencioso:',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: SizeConfig.getPercentageFontSize(4),
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     Switch(
                       value: _silentMode,
@@ -62,11 +67,12 @@ class _NotificationSettingsState extends State<NotificationSettings> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: SizeConfig.getPercentageHeight(2)),
             Container(
+              height: SizeConfig.getPercentageHeight(10),
               decoration: BoxDecoration(
                 color: Colors.grey[200],
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(SizeConfig.getPercentageWidth(4)),
                 border: Border.all(
                   color: Colors.grey,
                   width: 1,
@@ -81,14 +87,16 @@ class _NotificationSettingsState extends State<NotificationSettings> {
                 ],
               ),
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(SizeConfig.getPercentageWidth(2)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       'Bloquear Notificações:',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: SizeConfig.getPercentageFontSize(4),
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     Switch(
                       value: _blockNotifications,
@@ -103,11 +111,12 @@ class _NotificationSettingsState extends State<NotificationSettings> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: SizeConfig.getPercentageHeight(2)),
             Container(
+              height: SizeConfig.getPercentageHeight(10),
               decoration: BoxDecoration(
                 color: Colors.grey[200],
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(SizeConfig.getPercentageWidth(4)),
                 border: Border.all(
                   color: Colors.grey,
                   width: 1,
@@ -122,14 +131,16 @@ class _NotificationSettingsState extends State<NotificationSettings> {
                 ],
               ),
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(SizeConfig.getPercentageWidth(2)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       'Volume:',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: SizeConfig.getPercentageFontSize(4),
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     Slider(
                       value: _volume,
@@ -146,7 +157,6 @@ class _NotificationSettingsState extends State<NotificationSettings> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
           ],
         ),
       ),
