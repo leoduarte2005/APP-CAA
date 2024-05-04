@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Registro.dart';
-import 'package:flutter_application_1/TelaLogin.dart';
+import 'package:flutter_application_1/login.dart';
+import 'package:flutter_application_1/register.dart';
 
 class BoasVindas extends StatelessWidget {
   double calculateTopMargin(BuildContext context) {

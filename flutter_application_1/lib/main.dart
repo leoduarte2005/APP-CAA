@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/telaConfig/configMain.dart';
+import 'package:flutter_application_1/settings/settingsMain.dart';
 
 void main() {
   runApp(MyApp()); // Inicializa o aplicativo usando o widget MyApp
