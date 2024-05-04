@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/settings/darkmodeSettings.dart';
+import 'package:flutter_application_1/settings/fontSettings.dart';
+import 'package:flutter_application_1/settings/languegeSettings.dart';
+import 'package:flutter_application_1/settings/notSettings.dart';
+import 'package:flutter_application_1/settings/secSettings.dart';
 
 class Config extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: ThemeData(),
       home: SettingsScreen(),
     );
   }
@@ -44,10 +46,11 @@ class SettingsScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
               'Segurança',
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 25),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.03,
@@ -55,18 +58,19 @@ class SettingsScreen extends StatelessWidget {
             CustomButton(
               icon: Icons.person,
               label: 'Supervisão',
-              onPressed: () {
-                // Adicione aqui o código para a ação do botão
-              },
+              onPressed: () {},
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
             ),
             CustomButton(
               icon: Icons.lock,
-              label: 'Segurança',
+              label: 'Senhas e Segurança',
               onPressed: () {
-                // Adicione aqui o código para a ação do botão
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SecConfig()),
+                );
               },
             ),
             SizedBox(
@@ -74,7 +78,7 @@ class SettingsScreen extends StatelessWidget {
             ),
             Text(
               'Preferências',
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 25),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.03,
@@ -83,7 +87,11 @@ class SettingsScreen extends StatelessWidget {
               icon: Icons.notifications,
               label: 'Notificações',
               onPressed: () {
-                // Adicione aqui o código para a ação do botão
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => NotificationSettings()),
+                );
               },
             ),
             SizedBox(
@@ -93,7 +101,11 @@ class SettingsScreen extends StatelessWidget {
               icon: Icons.info,
               label: 'Idioma e região',
               onPressed: () {
-                // Adicione aqui o código para a ação do botão
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => LanguageRegionSettings()),
+                );
               },
             ),
             SizedBox(
@@ -103,7 +115,10 @@ class SettingsScreen extends StatelessWidget {
               icon: Icons.brightness_3,
               label: 'Modo Escuro',
               onPressed: () {
-                // Adicione aqui o código para a ação do botão
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DarkModeSettings()),
+                );
               },
             ),
             SizedBox(
@@ -113,7 +128,10 @@ class SettingsScreen extends StatelessWidget {
               icon: Icons.text_format,
               label: 'Tamanho da fonte',
               onPressed: () {
-                // Adicione aqui o código para a ação do botão
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FontSettings()),
+                );
               },
             ),
             SizedBox(
@@ -121,7 +139,7 @@ class SettingsScreen extends StatelessWidget {
             ),
             Text(
               'Suas informações',
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 25),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.03,
@@ -158,7 +176,7 @@ class SettingsScreen extends StatelessWidget {
             ),
             Text(
               'Políticas legais',
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 25),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.03,
@@ -185,7 +203,7 @@ class SettingsScreen extends StatelessWidget {
             ),
             Text(
               'Ajuda',
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 25),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
@@ -208,7 +226,24 @@ class SettingsScreen extends StatelessWidget {
               },
             ),
             SizedBox(
+              height: MediaQuery.of(context).size.height * 0.05,
+            ),
+            CustomButton(
+              icon: Icons.exit_to_app,
+              label: 'Sair',
+              onPressed: () {
+                // Adicione aqui o código para sair
+              },
+            ),
+            SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
+            ),
+            CustomButton(
+              icon: Icons.delete,
+              label: 'Apagar conta',
+              onPressed: () {
+                // Adicione aqui o código para apagar a conta
+              },
             ),
           ],
         ),
@@ -236,7 +271,7 @@ class CustomButton extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: Colors.black,
+          color: Colors.grey,
           width: 1,
         ),
         boxShadow: [
@@ -251,7 +286,7 @@ class CustomButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.transparent,
+          backgroundColor: Color(0xffeae4e4),
           padding: EdgeInsets.zero,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
