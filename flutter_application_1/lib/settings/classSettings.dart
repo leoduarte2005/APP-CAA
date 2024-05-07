@@ -78,25 +78,24 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        gradient: LinearGradient(
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+          colors: [
+                Colors.blue,
+                Colors.lightBlue,
+                Color.fromARGB(255, 159, 241, 255),
+          ],
+        ),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: Colors.grey,
           width: 1,
         ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.2),
-            spreadRadius: 1,
-            blurRadius: 4,
-            offset: Offset(0, 2),
-          ),
-        ],
       ),
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.grey[200],
+          backgroundColor: Colors.transparent, // Definindo o fundo do botão como transparente
           padding: EdgeInsets.zero,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
@@ -112,14 +111,14 @@ class CustomButton extends StatelessWidget {
             children: <Widget>[
               Icon(
                 icon,
-                color: Colors.black,
+                color: Colors.white, // Alterando a cor do ícone para branco
               ), // Ícone
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.1,
               ),
               Text(
                 label,
-                style: TextStyle(color: Colors.black, fontSize: 16),
+                style: TextStyle(color: Colors.white, fontSize: 16), // Alterando a cor do texto para branco
               ),
             ],
           ),
@@ -128,3 +127,4 @@ class CustomButton extends StatelessWidget {
     );
   }
 }
+

@@ -10,25 +10,24 @@ class _DarkModeSettingsState extends State<DarkModeSettings> {
 
   @override
   Widget build(BuildContext context) {
-    double containerHeight = MediaQuery.of(context).size.height * 0.1; // Definindo a altura do container como 10% da altura da tela
-
     return Scaffold(
       appBar: AppBar(
-        title: Text('Modo Escuro'),
-        
+        backgroundColor: Colors.blue, // Cor da barra superior igual à tela anterior
+        title: Text(
+          'Modo Escuro',
+          style: TextStyle(color: Colors.white), // Cor do texto branco
+        ),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: EdgeInsets.all(20.0),
         child: Container(
-          width: double.infinity,
-          height: containerHeight,
           decoration: BoxDecoration(
-            color: Colors.grey[200],
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all(
-              color: Colors.grey,
-              width: 1,
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Colors.blue.shade300, Colors.blue.shade800], // Gradiente azul
             ),
+            borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withOpacity(0.2),
@@ -45,10 +44,10 @@ class _DarkModeSettingsState extends State<DarkModeSettings> {
               children: [
                 Expanded(
                   child: Container(
-                    color: Colors.grey[200], // Adicionando cor de fundo transparente
+                    color: Colors.transparent, // Cor de fundo transparente
                     child: Text(
                       'Modo Escuro',
-                      style: TextStyle(fontSize: 18), 
+                      style: TextStyle(fontSize: 18, color: Colors.white), // Texto branco
                     ),
                   ),
                 ),

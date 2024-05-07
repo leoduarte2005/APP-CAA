@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'My App',
-      home: Config(), // Define BoasVindas como a tela inicial
+      home: SettingsScreen(), // Define BoasVindas como a tela inicial
     );
   }
 }

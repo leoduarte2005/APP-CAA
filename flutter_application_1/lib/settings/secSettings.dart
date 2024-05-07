@@ -6,6 +6,7 @@ class SecConfig extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blue.shade300, // Cor da barra superior igual à tela anterior
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
@@ -16,59 +17,94 @@ class SecConfig extends StatelessWidget {
           children: [
             Text(
               'Segurança',
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 20, color: Colors.white), // Tamanho da fonte ajustado para 20 e texto branco
             ),
           ],
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            SizedBox(height: SizeConfig.getPercentageHeight(2)), 
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.grey[200], // Definindo a cor do container
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: CustomButton(
-                icon: Icons.person,
-                label: 'Alterar senha',
-                onPressed: () {
-                  // Adicione aqui o código para a ação do botão
-                },
+      body: Stack(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [Colors.blue.shade300, Colors.blue.shade800], // Gradiente de cores
               ),
             ),
-            SizedBox(height: SizeConfig.getPercentageHeight(2)), 
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.grey[200], // Definindo a cor do container
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: CustomButton(
-                icon: Icons.lock,
-                label: 'Autentificação de dois fatores',
-                onPressed: () {
-                  // Adicione aqui o código para a ação do botão
-                },
-              ),
+          ),
+          SingleChildScrollView(
+            padding: EdgeInsets.all(20.0),
+            child: Column(
+              children: <Widget>[
+                SizedBox(height: 20), // Espaçamento superior
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        spreadRadius: 1,
+                        blurRadius: 4,
+                        offset: Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: CustomButton(
+                    icon: Icons.person,
+                    label: 'Alterar senha',
+                    onPressed: () {
+                      // Adicione aqui o código para a ação do botão
+                    },
+                  ),
+                ),
+                SizedBox(height: 20), // Espaçamento entre botões
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        spreadRadius: 1,
+                        blurRadius: 4,
+                        offset: Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: CustomButton(
+                    icon: Icons.lock,
+                    label: 'Autentificação de dois fatores',
+                    onPressed: () {
+                      // Adicione aqui o código para a ação do botão
+                    },
+                  ),
+                ),
+                SizedBox(height: 20), // Espaçamento entre botões
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        spreadRadius: 1,
+                        blurRadius: 4,
+                        offset: Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: CustomButton(
+                    icon: Icons.lock,
+                    label: 'Login Salvo',
+                    onPressed: () {
+                      // Adicione aqui o código para a ação do botão
+                    },
+                  ),
+                ),
+                SizedBox(height: 20), // Espaçamento inferior
+              ],
             ),
-            SizedBox(height: SizeConfig.getPercentageHeight(2)), 
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.grey[200], // Definindo a cor do container
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: CustomButton(
-                icon: Icons.lock,
-                label: 'Login Salvo',
-                onPressed: () {
-                  // Adicione aqui o código para a ação do botão
-                },
-              ),
-            ),
-            SizedBox(height: SizeConfig.getPercentageHeight(2)), 
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
