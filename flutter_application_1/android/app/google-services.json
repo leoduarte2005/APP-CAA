@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "356015528105",
+    "project_id": "fraseando-34cd3",
+    "storage_bucket": "fraseando-34cd3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356015528105:android:712615cb517aad2a8b71b8",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN3MPrzxSu4ivRbjyoxhZUJ918vLxyOj8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
