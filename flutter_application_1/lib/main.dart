@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/BoasVindas.dart';
-import 'package:flutter_application_1/pages/PageLogin.dart';
 
 void main() {
   runApp(const MyApp()); // Inicializa o aplicativo usando o widget MyApp

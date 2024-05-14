@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/PageLogin.dart';
 import 'package:flutter_application_1/pages/Registro.dart';
-import 'package:flutter_application_1/pages/TelaLogin.dart';
 
 class BoasVindas extends StatelessWidget {
   double calculateTopMargin(BuildContext context) {
