@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Registro.dart';
-import 'package:flutter_application_1/TelaLogin.dart';
+import 'package:flutter_application_1/pages/PageLogin.dart';
+import 'package:flutter_application_1/pages/Registro.dart';
+import 'package:flutter_application_1/pages/TelaLogin.dart';
 
 class BoasVindas extends StatelessWidget {
   double calculateTopMargin(BuildContext context) {
@@ -21,7 +22,7 @@ class BoasVindas extends StatelessWidget {
           children: <Widget>[
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 500,
+              height: 200,
               color: Color(0xff70e2fe),
             ),
             Positioned(
@@ -68,7 +69,7 @@ class BoasVindas extends StatelessWidget {
               child: TextButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => TelaLogin()));
+                      MaterialPageRoute(builder: (context) => PageLogin()));
                 },
                 child: Text(
                   'Login',

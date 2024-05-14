@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
-class TelaLogin extends StatelessWidget {
+class Registro extends StatelessWidget {
+  const Registro({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('tela login'),
+        title: const Text('tela Registre-se'),
       ),
     );
   }
