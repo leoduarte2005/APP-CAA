@@ -5,9 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/decorationPassword.dart';
 import 'package:flutter_application_1/components/snackbar.dart';
 import 'package:flutter_application_1/pages/mainPage.dart';
-import 'package:flutter_application_1/servicos/autentication.dart';
+import 'package:flutter_application_1/serviços/autentication.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-
 import '../components/decorationRegister.dart';
 import 'Register.dart';
 

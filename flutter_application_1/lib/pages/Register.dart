@@ -8,7 +8,7 @@ import 'package:flutter_application_1/components/decorationRegister.dart';
 import 'package:flutter_application_1/components/snackbar.dart';
 import 'package:flutter_application_1/pages/mainPage.dart';
 
-import '../servicos/autentication.dart';
+import 'package:flutter_application_1/serviços/autentication.dart';
 import 'pageLogin.dart';
 
 class Register extends StatefulWidget {
