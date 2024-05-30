@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/PageLogin.dart';
-import 'package:flutter_application_1/pages/Registro.dart';
+import 'package:flutter_application_1/pages/Register.dart';
 
 class BoasVindas extends StatelessWidget {
   double calculateTopMargin(BuildContext context) {
@@ -96,7 +96,7 @@ class BoasVindas extends StatelessWidget {
               child: TextButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Registro()));
+                      MaterialPageRoute(builder: (context) => Register()));
                 },
                 child: Text(
                   'Registre-se',
