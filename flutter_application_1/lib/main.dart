@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/settings/settingsMain.dart';
+import 'package:flutter_application_1/alertPage/mainPage.dart';
 
 void main() {
   runApp(MyApp()); // Inicializa o aplicativo usando o widget MyApp
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'My App',
-      home: SettingsScreen(), // Define BoasVindas como a tela inicial
+      home: Chamada(), // Define BoasVindas como a tela inicial
     );
   }
 }
