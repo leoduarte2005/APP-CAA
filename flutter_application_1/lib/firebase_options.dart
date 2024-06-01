@@ -64,6 +64,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '356015528105',
     projectId: 'fraseando-34cd3',
     storageBucket: 'fraseando-34cd3.appspot.com',
+    androidClientId: '356015528105-34lj3vd4uiu94n03um3gpgqgm7vn1gbb.apps.googleusercontent.com',
     iosClientId: '356015528105-ptsr3l4qagannh2pngmmaf9hha1ukoto.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterApplication1',
   );
@@ -74,6 +75,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '356015528105',
     projectId: 'fraseando-34cd3',
     storageBucket: 'fraseando-34cd3.appspot.com',
+    androidClientId: '356015528105-34lj3vd4uiu94n03um3gpgqgm7vn1gbb.apps.googleusercontent.com',
     iosClientId: '356015528105-ptsr3l4qagannh2pngmmaf9hha1ukoto.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterApplication1',
   );
