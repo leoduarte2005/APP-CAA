@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
 class Contato {
   final String nome;
   final String numero;
@@ -10,18 +9,18 @@ class Contato {
   Contato({required this.nome, required this.numero, required this.fotoUrl});
 }
 
-class ContatosSalvos extends StatelessWidget {
+class ContatosEmergencia extends StatelessWidget {
   final List<Contato> contatos = [
-    Contato(nome: 'João Silva', numero: '+55 11 98765-4321', fotoUrl: 'https://via.placeholder.com/150'),
-    Contato(nome: 'Maria Souza', numero: '+55 21 12345-6789', fotoUrl: 'https://via.placeholder.com/150'),
-    Contato(nome: 'Carlos Pereira', numero: '+55 31 98765-4321', fotoUrl: 'https://via.placeholder.com/150'),
+    Contato(nome: 'SAMU', numero: '192', fotoUrl: 'https://via.placeholder.com/150'),
+    Contato(nome: 'Polícia', numero: '190', fotoUrl: 'https://via.placeholder.com/150'),
+    Contato(nome: 'Bombeiros', numero: '193', fotoUrl: 'https://via.placeholder.com/150'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lista de Contatos'),
+        title: Text('Lista de Números de Emergência'),
       ),
       body: Container(
         padding: EdgeInsets.all(20.0),
@@ -37,7 +36,7 @@ class ContatosSalvos extends StatelessWidget {
           itemBuilder: (context, index) {
             final contato = contatos[index];
             return CustomButton(
-              icon: Icons.person,
+              icon: _getIcon(contato.nome),
               label: contato.nome,
               onPressed: () {
                 Navigator.push(
@@ -52,6 +51,19 @@ class ContatosSalvos extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  IconData _getIcon(String nome) {
+    switch (nome) {
+      case 'SAMU':
+        return Icons.local_hospital;
+      case 'Polícia':
+        return Icons.policy;
+      case 'Bombeiros':
+        return Icons.local_fire_department;
+      default:
+        return Icons.person;
+    }
   }
 }
 
@@ -94,7 +106,7 @@ class _ContatoDetalhesState extends State<ContatoDetalhes> {
             Navigator.pop(context);
           },
         ),
-        title: Text('Detalhes do Contato'),
+        title: Text('Detalhes do Número de Emergência'),
       ),
       body: Container(
         padding: EdgeInsets.all(20.0),

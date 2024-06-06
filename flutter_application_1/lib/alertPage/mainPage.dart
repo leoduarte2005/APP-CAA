@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/alertPage/addPage.dart';
 import 'package:flutter_application_1/alertPage/contact.dart';
+import 'package:flutter_application_1/alertPage/contactPro.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -46,20 +46,22 @@ class Chamada extends StatelessWidget {
               icon: Icons.person,
               label: 'conhecidos',
               onPressed: () {
-                                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ContatoDetalhes()),
-                  );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ContatosSalvos()),
+                );
               },
               height: buttonHeight,
             ),
             SizedBox(height: spacingHeight),
             CustomButton(
               icon: Icons.security,
-              label: 'Monitoramento',
+              label: 'Profissionais',
               onPressed: () {
-                // Ação do botão Monitoramento
-                print('Botão Monitoramento pressionado');
+                                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ContatosEmergencia()),
+                );
               },
               height: buttonHeight,
             ),
@@ -74,17 +76,6 @@ class Chamada extends StatelessWidget {
               height: buttonHeight,
             ),
             SizedBox(height: spacingHeight),
-            CustomButton(
-              icon: Icons.settings,
-              label: 'adicionar contato',
-              onPressed: () {
-                                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AdicionarContato()),
-                  );
-                },
-              height: buttonHeight,
-            ),
           ],
         ),
       ),
@@ -107,17 +98,68 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 10.0),
       height: height,
-      child: ElevatedButton.icon(
-        onPressed: onPressed,
-        icon: Icon(icon, color: Colors.blue), // Ícone azul
-        label: Text(label),
-        style: ElevatedButton.styleFrom(
-          disabledBackgroundColor: Colors.blue.shade500,
-          backgroundColor: Colors.white,
-          minimumSize: Size(double.infinity, height), // Largura total e altura dinâmica
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+          colors: [
+            Colors.blue,
+            Colors.lightBlue,
+            Color.fromARGB(255, 159, 241, 255),
+          ],
         ),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          width: 1,
+        ),
+      ),
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.transparent, // Definindo o fundo do botão como transparente
+          padding: EdgeInsets.zero,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+        ),
+        child: Container(
+          margin: EdgeInsets.only(left: MediaQuery.of(context).size.width * 0.04),
+          alignment: Alignment.center,
+          child: Row(
+            // Layout horizontal para ícone e texto
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[
+              Icon(
+                icon,
+                color: Colors.white, // Alterando a cor do ícone para branco
+              ), // Ícone
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.1,
+              ),
+              Text(
+                label,
+                style: TextStyle(color: Colors.white, fontSize: 16), // Alterando a cor do texto para branco
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class AdicionarContato extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Adicionar Contato'),
+      ),
+      body: Center(
+        child: Text('Tela de Adicionar Contato'),
       ),
     );
   }
